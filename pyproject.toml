@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 88
+exclude = .git,__pycache__,dist,build,.mypy_cache,.tox,.venv
+
+[project]
+name = "mypackage"
+version = "0.1.0"
+description = "A sample Python project to demonstrate best practices in packaging."
+authors = [
+    { name = "Abhishek Das", email = "das.abhishek15@gmail.com" }
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+repository = "https://github.com/AbhishekD15/mypackage"
+keywords = ["calculator", "math", "finance", "science"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9"
+]
+
+[project.urls]
+homepage = "https://github.com/AbhishekD15/mypackage"
+documentation = "https://github.com/AbhishekD15/mypackage#readme"
+repository = "https://github.com/AbhishekD15/mypackage"
+issue-tracker = "https://github.com/AbhishekD15/mypackage/issues"
+
+[project.dependencies]
+numpy = "^1.21"
+pytest = "^6.2"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "isort",
+    "flake8"
+]
