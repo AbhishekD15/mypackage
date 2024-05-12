@@ -53,3 +53,22 @@ This command generates distribution archives in the dist/ directory.
 ```bash
 pytest tests/
 ```
+
+## Usage
+
+```bash
+from mypackage import Calculator, ScientificCalculator, FinancialCalculator
+
+# Basic Calculator
+calc = Calculator()
+print(calc.add(5, 3))
+
+# Scientific Calculator
+sci_calc = ScientificCalculator()
+print(sci_calc.power(2, 10))
+
+# Financial Calculator
+fin_calc = FinancialCalculator()
+print(fin_calc.simple_interest(1000, 5, 3))
+
+```
